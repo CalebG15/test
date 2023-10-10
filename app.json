@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "test",
-    "slug": "test",
+    "slug": "testapplication",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5eafafa7-8606-4148-a738-0dc50b5b3f97"
+      }
+    },
+    "owner": "calebg15"
   }
 }

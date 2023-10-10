@@ -1,12 +1,62 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import PopupButton from './PopupButton';
+
+function MapsScreen() {
+  return (
+    <SafeAreaView style={styles.container}>
+      <Text>Home Screen</Text>
+      <PopupButton popupText="This is the Maps Screen" />
+      <StatusBar style="auto" />
+    </SafeAreaView>
+  );
+}
+
+function ProfileScreen() {
+  return (
+    <SafeAreaView style={styles.container}>
+      <Text>Home Screen</Text>
+      <PopupButton popupText="This is the Profile Screen" />
+      <StatusBar style="auto" />
+    </SafeAreaView>
+  );
+}
+
+function GroupsScreen() {
+  return (
+    <SafeAreaView style={styles.container}>
+      <Text>Profile Screen</Text>
+      <PopupButton popupText="This is the Group Screen" />
+      <StatusBar style="auto" />
+    </SafeAreaView>
+  );
+}
+
+function ScheduleScreen() {
+  return (
+    <SafeAreaView style={styles.container}>
+      <Text>Home Screen</Text>
+      <PopupButton popupText="This is the Schedule Screen" />
+      <StatusBar style="auto" />
+    </SafeAreaView>
+  );
+}
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Maps" component={MapsScreen} />
+        <Tab.Screen name="Groups" component={GroupsScreen} />
+        <Tab.Screen name="Profile" component={ProfileScreen} />
+        <Tab.Screen name="Schedule" component={ScheduleScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 
