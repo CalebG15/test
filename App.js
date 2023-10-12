@@ -4,11 +4,12 @@ import { SafeAreaView, StyleSheet, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import PopupButton from './PopupButton';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 function MapsScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Home Screen</Text>
+      <Text>Map Screen</Text>
       <PopupButton popupText="This is the Maps Screen" />
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -18,7 +19,7 @@ function MapsScreen() {
 function ProfileScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Home Screen</Text>
+      <Text>Profile Screen</Text>
       <PopupButton popupText="This is the Profile Screen" />
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -28,7 +29,7 @@ function ProfileScreen() {
 function GroupsScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Profile Screen</Text>
+      <Text>Group Screen</Text>
       <PopupButton popupText="This is the Group Screen" />
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -38,7 +39,7 @@ function GroupsScreen() {
 function ScheduleScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Home Screen</Text>
+      <Text>Schedule Screen</Text>
       <PopupButton popupText="This is the Schedule Screen" />
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -50,11 +51,66 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Maps" component={MapsScreen} />
-        <Tab.Screen name="Groups" component={GroupsScreen} />
-        <Tab.Screen name="Profile" component={ProfileScreen} />
-        <Tab.Screen name="Schedule" component={ScheduleScreen} />
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          headerShown: true,
+          headerTintColor: '#222428',
+          headerTitleAlign: 'left',
+          tabBarShowLabel: true,
+          tabBarActiveTintColor: '#EF476F', 
+          headerStyle: {
+            backgroundColor: '#EF476F',
+          },
+          headerTitleStyle: {
+            fontSize: 30, // Adjust the font size as needed
+            paddingBottom: 50,
+          },  
+          tabBarStyle: {
+            height: 90,
+            paddingHorizontal: 5,
+            paddingTop: 0,
+            backgroundColor: '#222428',
+            position: 'absolute',
+            borderTopWidth: 0,
+          },
+})}
+  >
+        <Tab.Screen 
+          name="Class Locations"
+          component={MapsScreen} 
+          options={{
+            tabBarLabel: 'Map',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="map" color={color} size={size} />
+          ),
+          }}/>
+        <Tab.Screen
+          name="Groups"
+          component={GroupsScreen} 
+          options={{
+            tabBarLabel: 'Groups',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="group" color={color} size={size} />
+          ),
+          }}/>
+        <Tab.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{
+            tabBarLabel: 'Profile',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="account" color={color} size={size} />
+            ),
+            }}/>
+        <Tab.Screen
+          name="Schedule"
+          component={ScheduleScreen}
+          options={{
+            tabBarLabel: 'Schedule',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="calendar" color={color} size={size} />
+            ),
+            }}/>
       </Tab.Navigator>
     </NavigationContainer>
   );
