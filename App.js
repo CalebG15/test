@@ -57,10 +57,6 @@ export default function App() {
           headerTintColor: '#222428',
           headerTitleAlign: 'left',
           tabBarShowLabel: true,
-          tabBarActiveTintColor: '#EF476F', 
-          headerStyle: {
-            backgroundColor: '#EF476F',
-          },
           headerTitleStyle: {
             fontSize: 30, // Adjust the font size as needed
             paddingBottom: 50,
@@ -80,6 +76,10 @@ export default function App() {
           component={MapsScreen} 
           options={{
             tabBarLabel: 'Map',
+            tabBarActiveTintColor: '#0079FF', 
+            headerStyle: {
+              backgroundColor: '#0079FF',
+            },
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="map" color={color} size={size} />
           ),
@@ -89,6 +89,10 @@ export default function App() {
           component={GroupsScreen} 
           options={{
             tabBarLabel: 'Groups',
+            tabBarActiveTintColor: '#FF0060', 
+            headerStyle: {
+              backgroundColor: '#FF0060',
+            },
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="group" color={color} size={size} />
           ),
@@ -97,6 +101,10 @@ export default function App() {
           name="Profile"
           component={ProfileScreen}
           options={{
+            tabBarActiveTintColor: '#F6FA70', 
+            headerStyle: {
+              backgroundColor: '#F6FA70',
+            },
             tabBarLabel: 'Profile',
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="account" color={color} size={size} />
@@ -106,6 +114,10 @@ export default function App() {
           name="Schedule"
           component={ScheduleScreen}
           options={{
+            tabBarActiveTintColor: '#00DFA2', 
+            headerStyle: {
+              backgroundColor: '#00DFA2',
+            },
             tabBarLabel: 'Schedule',
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="calendar" color={color} size={size} />

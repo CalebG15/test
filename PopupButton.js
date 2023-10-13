@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Button, Alert, StyleSheet } from 'react-native';
 
-const PopupButton = ({ popupText }) => {
+const PopupButton = ({ popupText, myColor }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleButtonPress = () => {
